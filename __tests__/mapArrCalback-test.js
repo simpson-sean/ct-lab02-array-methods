@@ -1,9 +1,17 @@
 //Test for map(arr, callback) function
 
 // import items
+import { mapArray } from '../functions/mapArrCallback.js';
 
-describe('mappArrCallback', () => {
+
+describe('mapArrCallback', () => {
     it('takes an array and callback and create new array with returned callback value', () => {
-        
+        const numArray = [1, 2, 3, 4, 5, 6, '', 7];
+        const callback = (item) => item * 10;
+        const expected = [10, 20, 30, 40, 50, 60, '', 70];
+        const actual = mapArray(numArray, callback);
+
+        expect(actual).toEqual(expected);
+
     })
 })
