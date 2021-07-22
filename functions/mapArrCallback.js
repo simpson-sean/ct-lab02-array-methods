@@ -2,14 +2,16 @@
 
  export const mapArray = (array, callback) => {
     
-    let newArray = []; 
-    
-    for (let i = 0; i < array.length; i++) {
-        newArray = [...newArray, callback(array[i])];
+    const newArray = [];
+
+    for (let index = 0; index < array.length; index++) {
+        const item = array[index];  
+        newArray[index] = callback(item);
     
     console.log('in the loop', newArray); 
-    return newArray;
     
     }
+    return newArray;
 }
+
 
