@@ -4,6 +4,7 @@
 import { mapArray } from '../functions/mapArrCallback.js';
 import { filterArray } from '../functions/filterArray.js';
 import { findIndex } from '../functions/findIndex.js';
+import { reduceArray } from '../functions/reduceArray.js';
 
 describe('mapArrCallback', () => {
     it('takes an array and callback and create new array with returned callback value', () => {
@@ -46,5 +47,30 @@ describe('findIndex', () => {
 
         expect(actual).toEqual(expected);
 
+    })
+})
+
+describe('reduceArray', () => {
+    it('reduces array to single value', () => {
+        const numArray = ['h', 'e', 'l', 'l', 'o'];
+        const callback = (accumulator, item) => {
+            return accumulator + item;
+        };
+        const expected = 'hello';
+        const actual = reduceArray(numArray, callback);
+
+        expect(actual).toEqual(expected);
+
+    })
+
+    it('reduces array with initial value', () => {
+        const numArray = ['h', 'e', 'l', 'l', 'o'];
+        const callback = (accumulator, item) => {
+            return accumulator + item;
+        };
+        const expected = '4hello';
+        const actual = reduceArray(numArray, callback, '4');
+
+        expect(actual).toEqual(expected);
     })
 })
