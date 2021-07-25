@@ -3,6 +3,7 @@
 // import items
 import { mapArray } from '../functions/mapArrCallback.js';
 import { filterArray } from '../functions/filterArray.js';
+import { findIndex } from '../functions/findIndex.js';
 
 describe('mapArrCallback', () => {
     it('takes an array and callback and create new array with returned callback value', () => {
@@ -26,3 +27,24 @@ describe('filterArray', () => {
         expect(actual).toEqual(expected);
     })
 });
+
+describe('findIndex', () => {
+    it('returns the index of the first item whos callback returns true', () => {
+        const numArray = ['a', 'b', 'c', 'd', 'e'];
+        const callback = (item) => item === 'b'
+        const expected = 1
+        const actual = findIndex(numArray, callback);
+
+        expect(actual).toEqual(expected);
+    })
+
+    it('return neg 1 if nothing found', () => {
+        const numArray = [1, 2, 3, 2, 5];
+        const callback = (item) => item === 8
+        const expected = -1
+        const actual = findIndex(numArray, callback);
+
+        expect(actual).toEqual(expected);
+
+    })
+})
