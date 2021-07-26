@@ -73,4 +73,16 @@ describe('reduceArray', () => {
 
         expect(actual).toEqual(expected);
     })
+
+})
+
+describe('everyFunction', () => {
+    it('returns all the truth', () => {
+        const myArray = ['abc', 'truth', 'alligator']
+        const callback = (item) => {
+            return item.length > 4
+        }
+        const actual = everyFunction(myArray, callback);
+        expect(actual).toBeFalsy();
+    })
 })
