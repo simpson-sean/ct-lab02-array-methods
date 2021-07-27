@@ -5,6 +5,7 @@ import { mapArray } from '../functions/mapArrCallback.js';
 import { filterArray } from '../functions/filterArray.js';
 import { findIndex } from '../functions/findIndex.js';
 import { reduceArray } from '../functions/reduceArray.js';
+import { everyFunction } from '../functions/everyFunction.js';
 
 describe('mapArrCallback', () => {
     it('takes an array and callback and create new array with returned callback value', () => {
@@ -83,6 +84,7 @@ describe('everyFunction', () => {
             return item.length > 4
         }
         const actual = everyFunction(myArray, callback);
+
         expect(actual).toBeFalsy();
     })
 })
