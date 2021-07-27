@@ -6,5 +6,4 @@ export const everyFunction = (array, callback) => {
             return index;
         }
     }
-    //return -1;
 }
